@@ -1,7 +1,7 @@
 function App() {
   return (
     <main>
-      <h1>Trouve ton artisan</h1>
+      <h1 className="text-bg-primary">Trouve ton artisan</h1>
     </main>
   );
 }

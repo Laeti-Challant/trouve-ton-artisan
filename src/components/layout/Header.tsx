@@ -1,4 +1,3 @@
-import logo from "../../assets/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Button,
@@ -11,17 +10,14 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Logo from "../common/Logo";
 
 export default function Header() {
   return (
     <header className="px-5">
       <Navbar expand="lg">
         <Navbar.Brand as={Link} to="/">
-          <img
-            className="img-fluid logo"
-            src={logo}
-            alt="logo trouve ton artisan région Auvergne Rhone-Alpes"
-          />
+          <Logo />
         </Navbar.Brand>
         <Container>
           <Form className="d-flex me-auto">

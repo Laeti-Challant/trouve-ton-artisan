@@ -14,12 +14,12 @@ $dark: #384050;
 
 .search-input {
   border: none;
-  border-bottom: 1px solid $dark;
+  border-bottom: 1px solid $secondary;
   border-radius: 0;
   background-color: $light;
   box-shadow: none;
   &:focus {
-    border-bottom: 1px solid $dark;
+    border-bottom: 1px solid $secondary;
     box-shadow: none;
   }
   &:hover {

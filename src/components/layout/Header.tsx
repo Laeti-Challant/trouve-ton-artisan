@@ -32,10 +32,7 @@ export default function Header() {
           </InputGroup>
         </Form>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          // className="d-flex justify-content-end"
-        >
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link className="fs-5 fw-bold text-secondary" as={Link} to="/">
               Alimentation

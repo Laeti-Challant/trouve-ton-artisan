@@ -5,7 +5,7 @@ export interface IArtisan {
   note: number;
   location: string;
   about: string;
-  amail: string;
+  email: string;
   website: string;
   category: string;
   top: boolean;

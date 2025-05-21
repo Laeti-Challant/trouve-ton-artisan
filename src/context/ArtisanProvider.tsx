@@ -10,19 +10,22 @@ export const ArtisanProvider = ({ children }: { children: ReactNode }) => {
   const [artisans, setArtisans] = useState<IArtisan[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // useEffect(() => {
+  //   setArtisans(datas);
+  //   setLoading(false);
+  // }, []);
 
   useEffect(() => {
-    setArtisans(datas);
-  }, []);
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setArtisans(datas);
+      setLoading(false);
+    }, 2000); // 2 secondes pour simuler un chargement
 
-  const filteredArtisans = artisans.filter((artisan) => {
-    const matchesCategory = artisan.category === selectedCategory;
-    const matchesSearchTerm =
-      artisan.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      artisan.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      artisan.specialty.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearchTerm;
-  });
+    return () => clearTimeout(timer); // nettoyage au démontage
+  }, []);
 
   const topArtisans = artisans.filter((artisan) => artisan.top);
 
@@ -30,12 +33,14 @@ export const ArtisanProvider = ({ children }: { children: ReactNode }) => {
     <ArtisanContext.Provider
       value={{
         artisans,
-        filteredArtisans,
+
         topArtisans,
         selectedCategory,
         setSelectedCategory,
         searchTerm,
         setSearchTerm,
+        loading,
+        setLoading,
       }}
     >
       {children}

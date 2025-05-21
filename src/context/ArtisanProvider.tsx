@@ -24,11 +24,14 @@ export const ArtisanProvider = ({ children }: { children: ReactNode }) => {
     return matchesCategory && matchesSearchTerm;
   });
 
+  const topArtisans = artisans.filter((artisan) => artisan.top);
+
   return (
     <ArtisanContext.Provider
       value={{
         artisans,
         filteredArtisans,
+        topArtisans,
         selectedCategory,
         setSelectedCategory,
         searchTerm,

@@ -4,6 +4,7 @@ import type { IArtisan } from "../@types";
 type TArtisanContext = {
   artisans: IArtisan[];
   filteredArtisans: IArtisan[];
+  topArtisans: IArtisan[];
   selectedCategory: string | null;
   setSelectedCategory: (category: string | null) => void;
   searchTerm: string;

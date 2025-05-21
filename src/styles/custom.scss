@@ -26,3 +26,48 @@ $dark: #384050;
     background-color: #fff;
   }
 }
+.note-container {
+  position: relative;
+  height: 1.8rem;
+
+  width: 110px;
+}
+
+.note-stars-progress {
+  position: relative;
+  width: 110px;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.note-stars-bg,
+.note-stars-fg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.note-stars-fg {
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1;
+  transition: width 0.3s;
+}
+
+.note-star {
+  font-size: 1.2rem;
+}
+
+.note-star.empty {
+  color: white; // couleur des étoiles vides
+}
+
+.note-star.filled {
+  color: $primary; // couleur des étoiles remplies
+}

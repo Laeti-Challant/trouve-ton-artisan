@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="bg-primary mt-5 mt-md-0">
+      <div className="bg-primary">
         <Container>
           <h1 className="text-white fw-bold">Trouve ton artisan</h1>
         </Container>

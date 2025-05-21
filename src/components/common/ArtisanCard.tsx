@@ -8,7 +8,10 @@ interface IArtisanCardProps {
 
 export default function ArtisanCard({ artisan }: IArtisanCardProps) {
   return (
-    <Card className="mx-auto bg-light shadow" style={{ minWidth: "18rem" }}>
+    <Card
+      className="mx-auto bg-light shadow "
+      style={{ minWidth: "18rem", maxWidth: "100%" }}
+    >
       <Card.Body className="d-flex flex-column p-2">
         <div className="d-flex justify-content-center">
           <Card.Title className="pb-4">{artisan.name}</Card.Title>

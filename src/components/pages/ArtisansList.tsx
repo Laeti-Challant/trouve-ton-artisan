@@ -13,7 +13,15 @@ export default function ArtisansList() {
   }
 
   const { category: slug, term } = useParams();
-  const category = slugToCategory(slug);
+  const categoryName = slug ? slugToCategory(slug) : null;
+
+  let baseTag = "";
+
+  if (categoryName) {
+    baseTag = `catégorie ${categoryName}`;
+  } else if (term) {
+    baseTag = `recherche: ${term}`;
+  }
 
   const { artisans, setSelectedCategory, loading, searchTerm, setSearchTerm } =
     context;
@@ -22,11 +30,13 @@ export default function ArtisansList() {
     if (term !== searchTerm) {
       setSearchTerm(term || "");
     }
-    setSelectedCategory(category || null);
-  }, [category, term, searchTerm, setSearchTerm, setSelectedCategory]);
+    setSelectedCategory(categoryName || null);
+  }, [categoryName, term, searchTerm, setSearchTerm, setSelectedCategory]);
 
   const filteredArtisans = artisans.filter((artisan) => {
-    const matchesCategory = category ? artisan.category === category : true;
+    const matchesCategory = categoryName
+      ? artisan.category === categoryName
+      : true;
     const matchesSearchTerm = searchTerm
       ? artisan.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         artisan.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -54,23 +64,30 @@ export default function ArtisansList() {
   }
 
   return (
-    <main>
-      <div className="bg-primary">
-        <Container>
-          <h1 className="text-white fw-bold py-2">
-            Artisans dans {category || searchTerm}
-          </h1>
+    <>
+      <title>{`${baseTag}- Trouve ton artisan région Auvergne-Rhône-Alpes`}</title>
+      <meta
+        name="description"
+        content={`Trouve ton artisan site de recherche pour la région Auvergne-Rhône-Alpes, liste des artisans selon la ${baseTag}`}
+      />
+      <main>
+        <div className="bg-primary">
+          <Container>
+            <h1 className="text-white fw-bold py-2 text-center">
+              Liste des artisans selon la {baseTag}
+            </h1>
+          </Container>
+        </div>
+        <Container className="w-100 py-3 mx-auto bg-white rounded-3">
+          <Row>
+            {filteredArtisans.map((artisan) => (
+              <Col className="p-2" key={artisan.id} lg={6}>
+                <ArtisanCard artisan={artisan} />
+              </Col>
+            ))}
+          </Row>
         </Container>
-      </div>
-      <Container className="w-100 py-3 mx-auto bg-white rounded-3">
-        <Row>
-          {filteredArtisans.map((artisan) => (
-            <Col className="p-2" key={artisan.id} lg={6}>
-              <ArtisanCard artisan={artisan} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </main>
+      </main>
+    </>
   );
 }

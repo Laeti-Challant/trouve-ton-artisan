@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 import type { IArtisan } from "../../@types";
 import StarsProgress from "./StarsProgress";
+import { Link } from "react-router-dom";
 
 interface IArtisanCardProps {
   artisan: IArtisan;
@@ -28,7 +29,8 @@ export default function ArtisanCard({ artisan }: IArtisanCardProps) {
             </Card.Text>
             <Card.Link
               className="btn btn-primary"
-              href={`/artisans/${artisan.id}`}
+              as={Link}
+              to={`/artisan/${artisan.id}`}
             >
               Voir plus
             </Card.Link>

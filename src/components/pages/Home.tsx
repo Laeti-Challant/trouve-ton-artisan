@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <div className="bg-primary">
         <Container>
-          <h1 className="text-white fw-bold">Trouve ton artisan</h1>
+          <h1 className="text-white fw-bold py-2">Trouve ton artisan</h1>
         </Container>
       </div>
       <Container className="my-5">

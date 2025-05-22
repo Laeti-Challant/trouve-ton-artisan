@@ -33,7 +33,6 @@ export const ArtisanProvider = ({ children }: { children: ReactNode }) => {
     <ArtisanContext.Provider
       value={{
         artisans,
-
         topArtisans,
         selectedCategory,
         setSelectedCategory,

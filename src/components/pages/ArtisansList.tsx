@@ -57,12 +57,12 @@ export default function ArtisansList() {
     <main>
       <div className="bg-primary">
         <Container>
-          <h1 className="text-white fw-bold">
+          <h1 className="text-white fw-bold py-2">
             Artisans dans {category || searchTerm}
           </h1>
         </Container>
       </div>
-      <Container className="w-100 py-3 mx-auto bg-white rounded-3 ">
+      <Container className="w-100 py-3 mx-auto bg-white rounded-3">
         <Row>
           {filteredArtisans.map((artisan) => (
             <Col className="p-2" key={artisan.id} lg={6}>

@@ -8,7 +8,7 @@ interface IStarProgressProps {
 
 export default function StarsProgress({ note, maxNote }: IStarProgressProps) {
   const percentage = (note * 100) / maxNote;
-  const starNumber = Math.round(maxNote); // always show max number of stars
+  const starNumber = Math.round(maxNote);
   return (
     <div className="note-stars-progress">
       <div className="note-stars-bg">

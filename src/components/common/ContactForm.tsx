@@ -26,17 +26,6 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // const formDataRules = {
-  //   lastName: [(v: string) => !!v || "Le nom est requis"],
-  //   firstName: [(v: string) => !!v || "Le prénom est requis"],
-  //   message: [(v: string) => !!v || "Un message est requis"],
-  //   email: [
-  //     (v: string) => !!v || "L'email est requis",
-  //     (v: string) =>
-  //       /^\S+@\S+\.\S+$/.test(v) || "Veuillez saisir un email valide",
-  //   ],
-  // };
-
   const {
     control,
     handleSubmit,
@@ -75,7 +64,7 @@ export default function ContactForm({
         { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
       );
       toast.success("Un email de confirmation vous a été envoyé.");
-      reset(); // Reset the form after successful submission
+      reset();
     } catch {
       toast.error(
         "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
@@ -98,40 +87,7 @@ export default function ContactForm({
     );
   };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if (!formRef.current) return;
-
-  //   setLoading(true);
-
-  //   try {
-  //     await emailjs.sendForm(
-  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  //       formRef.current,
-  //       { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-  //     );
-  //     toast.success(
-  //       "Votre message a été envoyé avec succès. Nous vous contacterons bientôt."
-  //     );
-
-  //     await emailjs.sendForm(
-  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID_REPLY,
-  //       formRef.current,
-  //       { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-  //     );
-  //     toast.success("Un email de confirmation vous a été envoyé.");
-  //     formRef.current?.reset(); // Reset the form after successful submission
-  //   } catch {
-  //     toast.error(
-  //       "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
-  //     );
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
+  
   return (
     <Container className="mt-5">
       <h2 className="pb-2">Demande de contact:</h2>

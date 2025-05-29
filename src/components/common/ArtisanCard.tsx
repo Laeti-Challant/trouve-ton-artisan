@@ -23,7 +23,10 @@ export default function ArtisanCard({ artisan }: IArtisanCardProps) {
             <Card.Text>{artisan.location}</Card.Text>
           </div>
           <div className="d-flex flex-column w-50 text-end align-items-end">
-            <Card.Text className="d-flex align-items-center justify-content-end">
+            <Card.Text
+              as="div"
+              className="d-flex align-items-center justify-content-end"
+            >
               <span className="fw-bold pe-2">{artisan.note}</span>
               <StarsProgress note={artisan.note} maxNote={5} />
             </Card.Text>

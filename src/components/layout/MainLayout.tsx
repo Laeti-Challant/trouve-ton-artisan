@@ -4,9 +4,11 @@ import Footer from "./Footer";
 
 export default function MainLayout() {
   return (
-    <div>
+    <div className="main-layout">
       <Header />
-      <Outlet />
+      <div className="main-content">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

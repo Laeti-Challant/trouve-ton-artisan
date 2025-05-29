@@ -107,7 +107,7 @@ export default function ArtisanDetails() {
             </Col>
           </Row>
         </Container>
-        <ContactForm />
+        <ContactForm artisanEmail={artisan.email} artisanName={artisan.name} />
       </main>
     </>
   );

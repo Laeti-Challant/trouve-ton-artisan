@@ -12,6 +12,15 @@ $dark: #384050;
 
 @import "bootstrap/scss/bootstrap";
 
+:root {
+  --toastify-color-success: #{$success};
+  --toastify-color-error: #{$danger};
+}
+
+.logo {
+  width: 240px;
+}
+
 .search-input {
   border: none;
   border-bottom: 1px solid $secondary;

@@ -10,3 +10,14 @@ export interface IArtisan {
   category: string;
   top: boolean;
 }
+export interface IContactFormProps {
+  artisanName: string;
+  artisanEmail: string;
+}
+
+export interface IFormData {
+  lastName: string;
+  firstName: string;
+  email: string;
+  message: string;
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+
+# Autoriser toutes les pages principales
+Allow: /artisans/
+Allow: /artisan/
+Allow: /artisans/search/
+
+# Page 404 : les robots doivent pouvoir la trouver, mais elle ne doit pas être indexée
+Disallow: /404
+
+Sitemap: /sitemap.xml

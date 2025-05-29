@@ -1,8 +1,16 @@
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./router/AppRoutes";
+import { ArtisanProvider } from "./context/ArtisanProvider";
+
 function App() {
   return (
-    <main>
-      <h1 className="text-bg-primary">Trouve ton artisan</h1>
-    </main>
+    <div className="bg-light text-dark min-vh-100">
+      <BrowserRouter>
+        <ArtisanProvider>
+          <AppRoutes />
+        </ArtisanProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 

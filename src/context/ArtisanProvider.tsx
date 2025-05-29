@@ -12,20 +12,20 @@ export const ArtisanProvider = ({ children }: { children: ReactNode }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
 
-  // useEffect(() => {
-  //   setArtisans(datas);
-  //   setLoading(false);
-  // }, []);
-
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setArtisans(datas);
-      setLoading(false);
-    }, 2000); // 2 secondes pour simuler un chargement
-
-    return () => clearTimeout(timer); // nettoyage au démontage
+    setArtisans(datas);
+    setLoading(false);
   }, []);
+  // En commentaire un useEffect pour tester les loading des pages:
+  // useEffect(() => {
+  //   setLoading(true);
+  //   const timer = setTimeout(() => {
+  //     setArtisans(datas);
+  //     setLoading(false);
+  //   }, 2000); // 2 secondes pour simuler un chargement
+
+  //   return () => clearTimeout(timer); // nettoyage au démontage
+  // }, []);
 
   const topArtisans = artisans.filter((artisan) => artisan.top);
 

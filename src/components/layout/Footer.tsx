@@ -30,7 +30,10 @@ export default function Footer() {
           </Row>
           <Row className="text-center text-md-center mt-5">
             <Col md={12}>
-              <nav className="nav flex-column flex-md-row justify-content-md-center">
+              <nav
+                aria-label="Liens légaux"
+                className="nav flex-column flex-md-row justify-content-md-center"
+              >
                 <Link className="nav-link text-white" to={"/"}>
                   Mentions légales
                 </Link>
@@ -50,36 +53,36 @@ export default function Footer() {
       </div>
       <Row>
         <Col md={12} className="text-center mt-2">
-          <a href="#">
+          <span>
             <FontAwesomeIcon
               className="p-2 fs-4 text-secondary"
               icon={faSquareFacebook}
             />
-          </a>
-          <a href="#">
+          </span>
+          <span>
             <FontAwesomeIcon
               className="p-2 fs-4 text-secondary"
               icon={faLinkedin}
             />
-          </a>
-          <a href="#">
+          </span>
+          <span>
             <FontAwesomeIcon
               className="p-2 fs-4 text-secondary"
               icon={faYoutube}
             />
-          </a>
-          <a href="#">
+          </span>
+          <span>
             <FontAwesomeIcon
               className="p-2 fs-4 text-secondary"
               icon={faInstagram}
             />
-          </a>
-          <a href="#">
+          </span>
+          <span>
             <FontAwesomeIcon
               className="p-2 fs-4 text-secondary"
               icon={faXTwitter}
             />
-          </a>
+          </span>
         </Col>
       </Row>
     </footer>

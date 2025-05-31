@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# Trouve ton artisan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est une application web développée avec React, TypeScript et Vite. Elle permet de rechercher et de contacter des artisans en Auvergne Rhône-Alpes.
+C'est une application fictive réalisée pour un devoir.
 
-Currently, two official plugins are available:
+## 🚀 Démo en ligne
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Le site est accessible à l'adresse suivante :
+[https://lab-lc.alwaysdata.net/trouve-ton-artisan/](https://lab-lc.alwaysdata.net/trouve-ton-artisan/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📋 Prérequis
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (version 18 ou supérieure recommandée)
+- npm (version 9 ou supérieure recommandée)
+
+---
+
+## 🛠️ Installation
+
+1. **Cloner le dépôt**
+   ```bash
+   git clone <url-du-repo>
+   cd trouve-ton-artisan
+   ```
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
+
+---
+
+## ⚙️ Lancement en développement
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Le site sera accessible sur [http://localhost:5173](http://localhost:5173) (ou le port indiqué par Vite).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🏗️ Build pour la production
+
+```bash
+npm run build
 ```
+
+Les fichiers optimisés seront générés dans le dossier `dist/`.
+
+Pour prévisualiser le build localement :
+
+```bash
+npm run preview
+```
+
+---
+
+## 🧩 Stack technique
+
+- React 19
+- TypeScript
+- Vite
+- Bootstrap 5
+- React Hook Form
+- EmailJS (envoi de mails)
+- FontAwesome (icônes)
+
+---
+
+## 🔒 Sécurité
+
+- Validation des formulaires côté client avec React Hook Form
+- Protection contre les failles XSS grâce à React
+- Aucune donnée sensible stockée côté client
+
+---
+
+## 📁 Structure du projet
+
+- `src/` : code source principal
+- `public/` : fichiers statiques (robots.txt, sitemap.xml, images, etc.)
+- `src/components/` : composants React
+- `src/styles/` : fichiers SCSS
+- `src/@types/` : définitions de types TypeScript
+
+---
+
+© 2025 Trouve ton artisan

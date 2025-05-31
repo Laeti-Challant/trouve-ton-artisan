@@ -74,10 +74,13 @@ export default function ArtisansList() {
         <div className="bg-primary">
           <Container>
             <h1 className="text-white fw-bold py-2 text-center">
-              Liste des artisans selon la {baseTag}
+              Liste des artisans
             </h1>
           </Container>
         </div>
+        <Container>
+          <h2 className="text-secondary text-center">Selon la {baseTag}</h2>
+        </Container>
         <Container className="w-100 py-3 mx-auto bg-white rounded-3">
           <Row>
             {filteredArtisans.map((artisan) => (

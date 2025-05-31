@@ -15,12 +15,16 @@ export default function ArtisanCard({ artisan }: IArtisanCardProps) {
     >
       <Card.Body className="d-flex flex-column p-2">
         <div className="d-flex justify-content-center">
-          <Card.Title className="pb-4">{artisan.name}</Card.Title>
+          <Card.Title as="h3" className="pb-4">
+            {artisan.name}
+          </Card.Title>
         </div>
         <div className="d-flex justify-content-between">
           <div className="d-flex flex-column justify-content-between">
-            <Card.Text className="m-0 pt-1">{artisan.specialty}</Card.Text>
-            <Card.Text>{artisan.location}</Card.Text>
+            <Card.Text as="h4" className="m-0 pt-1">
+              {artisan.specialty}
+            </Card.Text>
+            <Card.Text as="h4">{artisan.location}</Card.Text>
           </div>
           <div className="d-flex flex-column w-50 text-end align-items-end">
             <Card.Text

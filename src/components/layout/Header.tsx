@@ -39,7 +39,11 @@ export default function Header() {
 
   return (
     <header className="px-2 px-md-5 mb-4 mb-md-0">
-      <Navbar expand="lg" className="d-flex justify-content-around">
+      <Navbar
+        expand="lg"
+        className="d-flex justify-content-around"
+        aria-label=""
+      >
         <Navbar.Brand as={Link} to="/">
           <Logo />
         </Navbar.Brand>
@@ -53,7 +57,11 @@ export default function Header() {
               value={searchTerm}
               onChange={handleSearch}
             />
-            <Button variant="outline-secondary" type="submit">
+            <Button
+              aria-label="Lancer la recherche d'artisan"
+              variant="outline-secondary"
+              type="submit"
+            >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </Button>
           </InputGroup>
